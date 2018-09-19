@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<title>1st party storage from about:blank frame</title>
+  <script type="application/javascript">
+    function inject_frame_script() {
+      var frame = document.getElementById('ab');
+
+      frame.contentDocument.write("<script>localStorage['frameId'] = 'ABCDEF0123456789';<\/script>");
+    }
+  </script>
+</head>
+<body onload="inject_frame_script()">
+<iframe id="ab"></iframe>
+</body></html>
